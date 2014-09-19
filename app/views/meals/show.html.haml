@@ -1,3 +1,13 @@
-= @meal.inspect
+= link_to t('meal.new'), new_meal_path
+
 
 = render 'form'
+
+
+= render partial: 'meal_items/form', locals: {meal_item: @meal_item}
+
+= render partial: 'symptoms/form', locals: {symptom: @meal.symptoms.build}
+
+%hr
+%p Symptoms
+= render partial: 'symptoms/symptom', collection: @meal.symptoms.where.not(id: nil)

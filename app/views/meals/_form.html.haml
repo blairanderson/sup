@@ -1,6 +1,6 @@
 = simple_form_for @meal do |f|
-  = f.input :type,
+  = f.input :time,
     required: true,
-    collection: enum_option_pairs(Meal, :type),
+    collection: enum_option_pairs(Meal, :time),
     prompt: "Select a Meal!"
   = f.submit

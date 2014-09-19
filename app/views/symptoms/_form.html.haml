@@ -1,0 +1,6 @@
+%hr
+= simple_form_for symptom do |f|
+  = f.input :meal_id, as: :hidden
+  = f.input :name
+  = f.input :severity, collection: 1..10, prompt: "Select Severity"
+  = f.submit

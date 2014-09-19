@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+meal = Meal.create(time_cd: 3)
+meal.create_meal_item(description: "frito pie - ground beef / beans / lettuce / sour cream / tomatoes")

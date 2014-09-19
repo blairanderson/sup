@@ -9,6 +9,8 @@ class MealsController < ApplicationController
   end
 
   def show
+    @meal_item = @meal.meal_item || @meal.build_meal_item
+    @feeling = @meal.feelings.build
   end
 
   def new
@@ -17,7 +19,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-    
+
     if @meal.save
       redirect_to @meal
     else
@@ -31,6 +33,6 @@ class MealsController < ApplicationController
   end
 
   def meal_params
-    params.require(:meal).permit(:type)
+    params.require(:meal).permit(:time)
   end
 end

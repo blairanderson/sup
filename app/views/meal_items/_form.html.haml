@@ -1,0 +1,6 @@
+%hr
+%p Meal Item
+= simple_form_for meal_item do |f|
+  = f.input :description
+  = f.input :meal_id, as: :hidden
+  = f.submit
