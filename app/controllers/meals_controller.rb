@@ -1,6 +1,13 @@
 class MealsController < ApplicationController
   before_action :set_meal, only: [:show]
 
+  def index
+    @meals = Meal.order(created_at: :desc)
+    if @meals.count == 0
+      redirect_to new_meal_path
+    end
+  end
+
   def show
   end
 
@@ -10,8 +17,7 @@ class MealsController < ApplicationController
 
   def create
     @meal = Meal.new(meal_params)
-
-    binding.pry
+    
     if @meal.save
       redirect_to @meal
     else
