@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
   resources :meals
 
-  root "meals#new"
+  root to: redirect('/meals/new')
 end
