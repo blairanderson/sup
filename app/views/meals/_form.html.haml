@@ -1,0 +1,5 @@
+= simple_form_for @meal do |f|
+  = f.input :type,
+    required: true,
+    collection: enum_option_pairs(Meal, :type),
+    prompt: "Select a Meal!"
